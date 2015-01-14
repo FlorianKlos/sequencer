@@ -1,2 +1,1 @@
-# webproject-boilerplate
-This is a boilerplate for Webprojects. It supports Gulp, Sass, ES6, ...
+# sequencer

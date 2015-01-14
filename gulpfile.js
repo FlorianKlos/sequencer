@@ -27,7 +27,9 @@ gulp.task('clean-scripts', function () {
 // Build Scripts
 gulp.task('scripts', ['clean-scripts'], function () {
     return gulp.src('app/scripts/**/*.js')
-        .pipe(jshint())
+        .pipe(jshint({
+            "esnext": true
+        }))
         .pipe(jshint.reporter(jshintstylish))
         .pipe(sourcemaps.init())
         .pipe(to5())

@@ -6,3 +6,25 @@
 *::after {
   box-sizing: border-box;
 }
+
+$colorFont: #D9CB9E;
+$colorHighlight: #DC3522;
+$colorBackground: #2A2C2B;
+$colorSequencerBackground: #1E1E20;
+$colorSequencerTile: #374140;
+$colorSequencerInformation: desaturate($colorSequencerTile, 60);
+$colorSequencerActive: $colorHighlight;
+$colorSequencerPlaying: desaturate($colorHighlight, 40);
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  color: $colorFont;
+}
+
+@import 'sequencer';
+@import 'slider';
+@import 'button';

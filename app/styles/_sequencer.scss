@@ -1,0 +1,143 @@
+.sequencer {
+  width: 100%;
+  min-height: 100%;
+  padding: 1em;
+  background-color: $colorBackground;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: stretch;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+}
+
+.bpm {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  text-align: center;
+  padding: 2em 0 0.5em;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+
+.drum-pad {
+  flex-grow: 1;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  background-color: $colorSequencerBackground;
+
+  & * {
+    user-select: none;
+    cursor: default;
+  }
+}
+
+.instrument {
+  flex-grow: 1;
+
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.information {
+  width: 15%;
+  background-color: $colorSequencerInformation;
+  position: relative;
+
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+
+  p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: 0 -50% 0 0;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.note {
+  flex-grow: 1;
+
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+
+  background-color: $colorSequencerTile;
+  box-shadow: none;
+
+  border: 1px solid $colorFont;
+  .instrument &:not(:last-child) {
+    border-right: none;
+  }
+  .instrument:not(:last-child) & {
+    border-bottom: none;
+  }
+
+  transition: all 0.15s;
+
+  &:nth-child(4n -2) {
+    background-color: lighten($colorSequencerTile, 5);
+  }
+
+  &.active {
+    background-color: $colorSequencerActive;
+  }
+
+  &.playing {
+    background-color: $colorSequencerPlaying;
+  }
+
+  &.active.playing {
+    z-index: 100;
+    background-color: $colorSequencerActive;
+    box-shadow: 0 0 2em 0.5em $colorSequencerActive;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    transition: all 0.3s;
+    width: 260%;
+    height: 0;
+    top: 50%;
+    left: 50%;
+    background: $colorFont;
+    opacity: 0;
+    transform: translateX(-50%) translateY(-50%) rotate(45deg);
+  }
+
+  &.active.playing {
+    &:after {
+      background: $colorHighlight;
+    }
+  }
+
+  &:hover,
+  &.active {
+    &:after {
+      height: 90%;
+      opacity: 1;
+    }
+  }
+}
+
+
+
+
+

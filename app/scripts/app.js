@@ -15,7 +15,7 @@
             file: './sounds/drumkit/CYCdh_ElecK01-ClHat01.wav'
         },
         {
-            name: 'OpHat01',
+            name: 'OpHat',
             file: './sounds/drumkit/CYCdh_ElecK01-OpHat01.wav'
         },
         {
@@ -23,11 +23,11 @@
             file: './sounds/drumkit/CYCdh_ElecK01-Cymbal.wav'
         },
         {
-            name: 'Kick01',
+            name: 'Kick',
             file: './sounds/drumkit/CYCdh_ElecK01-Kick01.wav'
         },
         {
-            name: 'Snr01',
+            name: 'Snare',
             file: './sounds/drumkit/CYCdh_ElecK01-Snr01.wav'
         },
         {
